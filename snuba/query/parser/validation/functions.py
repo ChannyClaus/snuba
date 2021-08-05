@@ -66,7 +66,7 @@ class FunctionCallsValidator(ExpressionValidator):
             return
 
         for entity in entities:
-            valid_funcs = entity.get_valid_functions()
+            valid_funcs = entity.get_valid_function_names()
             if exp.function_name not in valid_funcs:
                 # todo(meredith): add some metrics or logging
                 # to audit what functions are actually being used
