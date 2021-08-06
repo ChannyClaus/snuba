@@ -92,7 +92,9 @@ class CustomFunction(QueryProcessor):
             ):
                 try:
                     self.__validator.validate(
-                        expression.parameters, self.__dataset_schema
+                        self.__function_name,
+                        expression.parameters,
+                        self.__dataset_schema,
                     )
                 except InvalidFunctionCall as exception:
                     raise InvalidCustomFunctionCall(
